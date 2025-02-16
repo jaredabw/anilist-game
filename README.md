@@ -1,4 +1,5 @@
 Todo:   
+proper media format in sidebar and victory rather than just type    
 display time taken   
 allowed routes   
 end page reminder in sidebar   
