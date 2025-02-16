@@ -1,0 +1,79 @@
+query StaffQuery ($id: Int) {
+    Staff (id: $id) {
+        id
+        name {
+            full
+        }
+        image {
+            large
+            medium
+        }
+        description (asHtml: true)
+        gender
+        age
+        yearsActive
+        dateOfBirth {
+            year
+            month
+            day
+        }
+        dateOfDeath {
+            year
+            month
+            day
+        }
+        homeTown
+        bloodType
+        characters (sort: FAVOURITES_DESC) {
+            edges {
+                node {
+                    id
+                    name {
+                        full
+                    }
+                    image {
+                        large
+                        medium
+                    }
+                }
+                media {
+                    id
+                    type
+                    title {
+                        romaji
+                    }
+                    coverImage {
+                        large
+                        medium
+                    }
+                    startDate {
+                        year
+                        month
+                        day
+                    }
+                }
+            }
+        }
+        staffMedia (sort: FAVOURITES_DESC) {
+            edges {
+                node {
+                    id
+                    type
+                    title {
+                        romaji
+                    }
+                    coverImage {
+                        large
+                        medium
+                    }
+                    startDate {
+                        year
+                        month
+                        day
+                    }
+                }
+                staffRole
+            }
+        }
+    }
+}

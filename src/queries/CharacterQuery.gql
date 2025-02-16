@@ -1,0 +1,47 @@
+query CharacterQuery ($id: Int) {
+    Character (id: $id) {
+        id
+        name {
+            full
+        }
+        image {
+            large
+            medium
+        }
+        description (asHtml: true)
+        gender
+        age
+        bloodType
+        dateOfBirth {
+            year
+            month
+            day
+        }
+        media (sort: POPULARITY_DESC) {
+            edges {
+                node {
+                    id
+                    type
+                    title {
+                        romaji
+                    }
+                    coverImage {
+                        large
+                        medium
+                    }
+                }
+                voiceActors (sort: FAVOURITES_DESC, language: JAPANESE) {
+                    id
+                    name {
+                        full
+                    }
+                    language
+                    image {
+                        medium
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+query StudioQuery ($id: Int) {
+    Studio (id: $id) {
+        id
+        name
+        media (sort: START_DATE) {
+            edges {
+                node {
+                    id
+                    type
+                    title {
+                        romaji
+                    }
+                    coverImage {
+                        large
+                        medium
+                    }
+                }
+            }
+        }
+    }
+}

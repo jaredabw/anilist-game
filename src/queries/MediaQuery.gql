@@ -1,0 +1,111 @@
+query MediaQuery ($id: Int, $type: MediaType) {
+    Media (id: $id, type: $type) {
+        type
+        id
+        title {
+            romaji
+        }
+        format
+        status
+        episodes
+        chapters
+        description
+        season
+        seasonYear
+        coverImage {
+            extraLarge
+            medium
+        }
+        bannerImage
+        averageScore
+        genres
+        tags {
+            name
+            id
+            isMediaSpoiler
+        }
+        studios {
+            edges {
+                isMain
+                node {
+                    id
+                    name
+                    isAnimationStudio
+                }
+            }
+        }
+        relations {
+            edges {
+                relationType (version: 2)
+                node {
+                    id
+                    title {
+                        romaji
+                    }
+                    type
+                    format
+                    coverImage {
+                        medium
+                    }
+                    status
+                }
+            }
+        }
+        characters (sort: ROLE) {
+            edges {
+                role
+                node {
+                    id
+                    name {
+                        full
+                    }
+                    image {
+                        medium
+                    }
+                }
+                voiceActors (sort: FAVOURITES_DESC, language: JAPANESE) {
+                    id
+                    name {
+                        full
+                    }
+                    language
+                    image {
+                        medium
+                    }
+                }
+            }
+        }
+        staff (perPage: 24) {
+            edges {
+                role
+                node {
+                    id
+                    name {
+                        full
+                    }
+                    image {
+                        medium
+                    }
+                }
+            }
+        }
+        recommendations (sort: RATING_DESC, perPage: 5) {
+            edges {
+                node {
+                    id
+                    mediaRecommendation {
+                        id
+                        title {
+                            romaji
+                        }
+                        type
+                        coverImage {
+                            large
+                            medium
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
