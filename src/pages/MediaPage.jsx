@@ -165,7 +165,8 @@ const MediaPage = ({ id, type }) => {
             )}
           </div>
 
-          <div className="bg-white p-4 mt-4 rounded-lg shadow">
+          {media.tags.length > 0 && (
+            <div className="bg-white p-4 mt-4 rounded-lg shadow">
             <p className="font-semibold">Tags</p>
             {media.tags.map((tag) => (
               <Link
@@ -191,6 +192,7 @@ const MediaPage = ({ id, type }) => {
               </Link>
             ))}
           </div>
+          )}
         </div>
 
         <div className="w-3/4">
