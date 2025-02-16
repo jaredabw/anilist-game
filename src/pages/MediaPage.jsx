@@ -238,7 +238,7 @@ const MediaPage = ({ id, type }) => {
 
                     <div className="flex flex-col justify-between p-3 w-full">
                       <p className="text-blue-500 text-xs font-semibold mb-2">
-                        {titleCase(
+                        {relation.relationType && titleCase(
                           relation.relationType
                             .toLowerCase()
                             .replaceAll("_", " ")
@@ -259,7 +259,7 @@ const MediaPage = ({ id, type }) => {
                               )
                           : relation.node.format}{" "}
                         ・{" "}
-                        {titleCase(
+                        {relation.node.status && titleCase(
                           relation.node.status
                             .toLowerCase()
                             .replaceAll("_", " ")
@@ -307,7 +307,7 @@ const MediaPage = ({ id, type }) => {
                           {character.node.name.full}
                         </p>
                         <p className="text-gray-500 text-xs mt-auto">
-                          {titleCase(character.role.toLowerCase())}
+                          {character.role && titleCase(character.role.toLowerCase())}
                         </p>
                       </div>
                     </Link>
@@ -332,7 +332,7 @@ const MediaPage = ({ id, type }) => {
                             {character.voiceActors[0].name.full}
                           </p>
                           <p className="text-gray-500 text-xs mt-auto text-right">
-                            {titleCase(
+                            {character.voiceActors[0].language && titleCase(
                               character.voiceActors[0].language.toLowerCase()
                             )}
                           </p>
@@ -383,7 +383,7 @@ const MediaPage = ({ id, type }) => {
                         {staff.node.name.full}
                       </p>
                       <p className="text-gray-500 text-xs mt-auto">
-                        {titleCase(staff.role.toLowerCase())}
+                        {staff.role && titleCase(staff.role.toLowerCase())}
                       </p>
                     </div>
                   </Link>
