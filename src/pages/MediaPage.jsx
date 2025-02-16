@@ -219,7 +219,11 @@ const MediaPage = ({ id, type }) => {
                         relation.node.id,
                         relation.node.title.romaji,
                         relation.node.coverImage.medium,
-                        relation.relationType
+                        titleCase(
+                          relation.relationType
+                            .toLowerCase()
+                            .replaceAll("_", " ")
+                        )
                       )
                     }
                     className="flex bg-white rounded-lg shadow overflow-hidden h-29"
