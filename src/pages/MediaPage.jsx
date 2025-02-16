@@ -292,7 +292,7 @@ const MediaPage = ({ id, type }) => {
                           character.node.id,
                           character.node.name.full,
                           character.node.image.medium,
-                          "Includes"
+                          "Features"
                         )
                       }
                       className={`flex ${
