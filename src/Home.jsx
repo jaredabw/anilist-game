@@ -77,7 +77,7 @@ const Home = () => {
 
       <button
         onClick={handleStartGame}
-        className="bg-blue-500 hover:bg-blue-700 text-white p-3 rounded-lg"
+        className="bg-blue-500 hover:bg-blue-700 text-white p-3 rounded-lg hover:cursor-pointer"
       >
         Start Game
       </button>
