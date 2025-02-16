@@ -16,8 +16,6 @@
     "graphql-request": "^7.1.2",
     "http-status-codes": "^2.3.0",
     "react": "^19.0.0",
-    "react-confetti": "^6.2.2",
-    "react-confetti-explosion": "^2.1.2",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
     "title-case": "^4.3.2",
