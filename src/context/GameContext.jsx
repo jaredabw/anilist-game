@@ -17,6 +17,8 @@ export const GameProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(null);
 
   const startGame = async (startType, endType, startId, endId) => {
+    setGameData({ startType: null, startId: null, endType: null, endId: null, victory: false, path: [] });
+    // Reset game data as I believe there was a race condition causing the game to immediately think it is victory when beginning after winning a game.
     const data = await fetchMedia(startId, startType);
     const startPage = { type: startType, id: Number(startId), name: data.Media.title.romaji, image: data.Media.coverImage.medium, relationshipFromPrev: null };
     setGameData({ startType, startId, endType, endId, victory: false, path: [startPage] });
